@@ -16,7 +16,7 @@ export default function ActionBar({ children }: CP): JSX.Element {
 			<CRC>
 				<div className='d-flex justify-content-between align-items-center'>
 					<Link href='/'>
-						<a className='text-light'>home</a>
+						<a className='text-light'>CBO Name</a>
 					</Link>
 
 					{children}

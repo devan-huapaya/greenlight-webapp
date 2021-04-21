@@ -9,11 +9,11 @@ export default function Home(): JSX.Element {
 	return (
 		<Layout title='Dashboard'>
 			<Stack tokens={stackTokens}>
-				<h3 className='mb-3'>
-					Directory Page
-				</h3>
-				<span >
-					Dynamic page rendering test:
+				<span>
+					Hello World.{' '}
+					<Link href='/about' as={process.env.BACKEND_URL + '/about'}>
+						<a>About</a>
+					</Link>
 				</span>
 				<Counter />
 			</Stack>

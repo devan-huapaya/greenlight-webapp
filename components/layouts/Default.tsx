@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import NavBar from '~components/ui/NavBar'
 import { getAuthUser } from '~store/slices/auth'
 import CP from '~types/componentProps'
 import ActionBar from '~ui/ActionBar'
@@ -18,6 +19,7 @@ export default function DefaultLayout({ children }: CP): JSX.Element {
 	return (
 		<>
 			<ActionBar />
+			<NavBar />
 
 			{children}
 		</>

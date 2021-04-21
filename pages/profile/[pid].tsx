@@ -16,14 +16,9 @@ export default function Profile(): JSX.Element {
 
 	return (
 		<Layout title={`Profile Page ${pid}`}>
-			<Stack className='mt-5' tokens={stackTokens}>
-				<Link href='/about' as={process.env.BACKEND_URL + '/about'}>
-					<a>About</a>
-				</Link>
-				<Link href='/' as={process.env.BACKEND_URL + '/'}>
-					<a>Home</a>
-				</Link>
-			</Stack>
+			<span>
+				Profile Page
+			</span>
 		</Layout>
 	)
 }

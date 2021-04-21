@@ -7,16 +7,13 @@ const stackTokens: IStackTokens = { childrenGap: 40 }
 
 export default function Home(): JSX.Element {
 	return (
-		<Layout title='Dashboard'>
-			<Stack tokens={stackTokens}>
-				<h3 className='mb-3'>
-					Directory Page
-				</h3>
-				<span >
-					Dynamic page rendering test:
-				</span>
-				<Counter />
-			</Stack>
+		<Layout>
+			<h3 className='mt-5'>
+				My Requests
+			</h3>
+			<h3 className='mt-5'>
+				Requests
+			</h3>
 		</Layout>
 	)
 }
