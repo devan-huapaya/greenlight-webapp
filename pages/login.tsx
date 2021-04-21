@@ -21,7 +21,7 @@ export default function LoginPage(): JSX.Element {
 	}, [auth.signedIn, auth.loading, router])
 
 	return (
-		<Layout title='Login'>
+		<Layout title='Login' showNav={false}>
 			<p>Please Sign in to continue</p>
 			<PrimaryButton
 				text={auth.loading ? 'Loading...' : 'Login'}

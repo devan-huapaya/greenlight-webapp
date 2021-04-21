@@ -42,8 +42,8 @@ const { isLoading, signInUser } = slice.actions
  * Dispatches actions to login the current user
  */
 export const loginUser = () => (dispatch: AppDispatch): void => {
+	dispatch(isLoading(true))
 	setTimeout(() => {
-		dispatch(isLoading(true))
 		dispatch(signInUser(fakeUser))
 		dispatch(isLoading(false))
 	}, 1000)

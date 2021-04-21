@@ -6,7 +6,10 @@ import { getAuthUser } from '~store/slices/auth'
 import CP from '~types/componentProps'
 import ActionBar from '~ui/ActionBar'
 
-export default function DefaultLayout({ children }: CP): JSX.Element {
+export interface DefaultLayoutProps extends CP {
+	showNav?: boolean
+}
+export default function DefaultLayout({ children, showNav=true }: DefaultLayoutProps): JSX.Element {
 	const router = useRouter()
 	const auth = useSelector(getAuthUser)
 
@@ -19,7 +22,9 @@ export default function DefaultLayout({ children }: CP): JSX.Element {
 	return (
 		<>
 			<ActionBar />
-			<NavBar />
+			{showNav && (
+				<NavBar />
+			)}
 
 			{children}
 		</>
