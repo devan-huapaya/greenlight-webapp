@@ -2,12 +2,18 @@
 
 ## In this project
 
-- NextJS
-- Redux/toolkit
-- Typescript
-- FluentUI
-- Bootstrap
-- Plop
+- [NextJS](https://nextjs.org/docs/getting-started)
+  React front end framework for static site generation and routing
+- [Redux/toolkit](https://redux-toolkit.js.org/)
+  Global app state management
+- [Typescript](https://www.typescriptlang.org/)
+  Strict typing
+- [FluentUI](https://developer.microsoft.com/en-us/fluentui#/controls/web)
+  Microsoft components
+- [Bootstrap](https://getbootstrap.com/docs/5.0/customize/sass/)
+  Utilities and layout styles
+- [Plop](https://plopjs.com/)
+  Component and redux generators for faster development
 
 ### Install dependies
 
@@ -88,17 +94,17 @@ make creating new components and reducers simpler.
 # default command
 yarn plop [generator_name] [first_prompt_value] [...prompt_values]
 
-# create a page
+# Create a page
 # Creates a react component in the ./pages/ directory
 yarn plop page page-name
 
-# create a component
+# Create a component
 # Creates a react component and style.module.scss in a folder with the component name
 # Inside of the the ./components/ui/ directory.
 # Currently this only creates a component in the ./components/ui/ directory
-yarn plop component component-name
+yarn plop component ComponentName
 
-# create a reducer
+# Create a reducer
 # Creates a react component and style.module.scss in a folder with the component name
 # Currently this only creates a file and a reference still needs to be added to ./store/index.ts
 yarn plop slice sliceName
