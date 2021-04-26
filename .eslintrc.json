@@ -5,6 +5,7 @@
 		"project": "./tsconfig.json"
 	},
 	"extends": [
+		"plugin:react/recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -13,10 +14,13 @@
 		"plugin:import/typescript",
 		"prettier"
 	],
-	"ignorePatterns": ["out/**", "**/vendor/*.js", "*config.js"],
+	"ignorePatterns": ["out/**", "**/vendor/*.js", "*config.js", "*plopFile.js", "plop_templates"],
 	"rules": {
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
+		"react/react-in-jsx-scope": 0,
+		"no-unused-vars": 0,
+		"@typescript-eslint/no-unused-vars": "warn",
 		// TODO: Enable these as project becomes more stable
 		"@typescript-eslint/explicit-module-boundary-types": "warn",
 		"@typescript-eslint/no-unsafe-member-access": "warn",

@@ -1,4 +1,3 @@
-// eslint:disable-next-line
 const pageExists = require('./plop_templates/utils/pageExists')
 
 module.exports = plop => {

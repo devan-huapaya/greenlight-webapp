@@ -29,8 +29,8 @@ export default function NavBar({}: CP): JSX.Element {
 		<div className={'d-flex justify-content-between align-items-center pt-5'}>
 			<CRC>
 				<div className='d-flex justify-content-between align-items-center'>
-					{links.map(link => (
-						<Link href={link.link}>
+					{links.map((link, i) => (
+						<Link href={link.link} key={`navbar-link-${i}`}>
 							<a className=''>{link.label}</a>
 						</Link>
 					))}
