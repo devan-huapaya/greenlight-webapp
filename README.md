@@ -7,6 +7,7 @@
 - Typescript
 - FluentUI
 - Bootstrap
+- Plop
 
 ### Install dependies
 
@@ -15,6 +16,14 @@ yarn
 ```
 
 ### Run locally
+
+```bash
+yarn dev
+```
+
+### Using Templates
+
+This project uses Plop templating to generate
 
 ```bash
 yarn dev
@@ -32,7 +41,7 @@ yarn export
 yarn export-and-serve
 ```
 
-## Typescript paths
+## Absolute paths
 
 Root level, and commonly accessed directories have an alias created in `tsconfig.json` for easy access and maintainability. `(e.g. '~types', '~store', '~slices', '~components')`
 
@@ -68,6 +77,31 @@ The above `SignUpForm` component can now be imported as
 
 ```js
 import SignUpForm from '~forms/SignUpForm'
+```
+
+## Templates and Plop generators
+
+Due to the complexity of the component folder structure this project uses Plop templating to
+make creating new components and reducers simpler.
+
+```bash
+# default command
+yarn plop [generator_name] [first_prompt_value] [...prompt_values]
+
+# create a page
+# Creates a react component in the ./pages/ directory
+yarn plop page page-name
+
+# create a component
+# Creates a react component and style.module.scss in a folder with the component name
+# Inside of the the ./components/ui/ directory.
+# Currently this only creates a component in the ./components/ui/ directory
+yarn plop component component-name
+
+# create a reducer
+# Creates a react component and style.module.scss in a folder with the component name
+# Currently this only creates a file and a reference still needs to be added to ./store/index.ts
+yarn plop slice sliceName
 ```
 
 ## NO SERVER SIDE NEXT.js FEATURES

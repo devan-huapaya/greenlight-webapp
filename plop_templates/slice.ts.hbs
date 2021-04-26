@@ -1,0 +1,30 @@
+/*!
+ * Copyright (c) Microsoft. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ */
+export const slice = createSlice({
+	name: '{{camelCase name}}',
+	initialState: {
+		
+	},
+	reducers: {
+		set: (state, action) => {
+			state.{{camelCase name}} = action.payload
+		}
+	}
+})
+
+// Export actions
+export const { set } = slice.actions
+
+/**
+ * Add async and dynamic actions here
+ */
+
+/**
+ * Add getters here
+ */
+export const get{{ProperCase name}} = (state: RootState) => state{{camelCase name}}
+
+// Export reducer
+export default slice.reducer

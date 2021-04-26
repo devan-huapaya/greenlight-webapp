@@ -9,7 +9,11 @@ import ActionBar from '~ui/ActionBar'
 export interface DefaultLayoutProps extends CP {
 	showNav?: boolean
 }
-export default function DefaultLayout({ children, showNav=true }: DefaultLayoutProps): JSX.Element {
+
+export default function DefaultLayout({
+	children,
+	showNav = true
+}: DefaultLayoutProps): JSX.Element {
 	const router = useRouter()
 	const auth = useSelector(getAuthUser)
 
@@ -22,9 +26,7 @@ export default function DefaultLayout({ children, showNav=true }: DefaultLayoutP
 	return (
 		<>
 			<ActionBar />
-			{showNav && (
-				<NavBar />
-			)}
+			{showNav && <NavBar />}
 
 			{children}
 		</>
