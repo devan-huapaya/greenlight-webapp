@@ -4,9 +4,10 @@ import { useRouter } from 'next/router'
 import { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAuthUser, logoutUser } from '~slices/auth'
+import ComponentProps from '~types/ComponentProps'
 import style from './index.module.scss'
 
-export default function ActionBar(): JSX.Element {
+export default function CustomPersona({ className }: ComponentProps): JSX.Element {
 	const auth = useSelector(getAuthUser)
 	const dispatch = useDispatch()
 	const [personaMenuOpen, setPersonaMenuOpen] = useState(false)
@@ -18,7 +19,7 @@ export default function ActionBar(): JSX.Element {
 	const { firstName } = auth.user.data
 
 	return (
-		<div>
+		<div className={className}>
 			<div
 				onClick={() => setPersonaMenuOpen(true)}
 				className={cx(style.persona, 'd-flex align-items-center')}

@@ -35,16 +35,18 @@ This project uses Plop templating to generate
 yarn dev
 ```
 
-### Build production static deployment
+### Build for production
 
 ```bash
-yarn export
+yarn build
 ```
 
-### Build and serve production static deployment
+### Server production locally
+
+**This must be called AFTER build**
 
 ```bash
-yarn export-and-serve
+yarn start
 ```
 
 ## Absolute paths
@@ -110,24 +112,27 @@ yarn plop component ComponentName
 yarn plop slice sliceName
 ```
 
-## NO SERVER SIDE NEXT.js FEATURES
+## Comments:
 
-Due to this project likely requiring azure hosting which does not support Next.js microservice api architecture it we will be avoiding any server side rendering logic in the code. (e.g. getServerSideProps)
+We like comments and JSDocs here. It all gets removed at build time anyway.
 
----
+Use JSDocs comments to talk about your functions and components.
 
-### Next-js-example used for this project base
-
-```bash
-https://github.com/thierryc/Next-gh-page-example/
-
-https://thierryc.github.io/Next-gh-page-example/
+```js
+/**
+ * General description and helpful information
+ *
+ * @params {<type>} You can talk abou your inputs using the @params keyword
+ * @returns {<returntype>} What does your function return? What kind of component is it?
+ * /
 ```
 
----
-
-### TODO:
+## TODO:
 
 - Clean up deployment environments (remove vercel, ensure gh-pages deploy)
 - Clean up bootstrap
 - Determine if azure docker deployment can support nextjs
+- And much more! 🙌✨🌈
+
+This project uses `TODO:` and `FIXME` comments to keep track outstanding in-term development work.
+I recommend using a VSCode extension like Todo Tree to help see them all

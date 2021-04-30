@@ -1,5 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap'
-import CP from '~types/componentProps'
+import CP from '~types/ComponentProps'
 
 /**
  * A single column wrapped in a row and container

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { AppDispatch, RootState } from '~store'
-import type Auth from '~types/auth'
+import type Auth from '~types/Auth'
 
 // TODO: add real authentication
 const fakeUser = {

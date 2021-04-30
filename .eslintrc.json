@@ -14,7 +14,14 @@
 		"plugin:import/typescript",
 		"prettier"
 	],
-	"ignorePatterns": ["out/**", "**/vendor/*.js", "*config.js", "*plopFile.js", "plop_templates"],
+	"ignorePatterns": [
+		"out/**",
+		"**/vendor/*.js",
+		"*config.js",
+		"*plopFile.js",
+		"plop_templates",
+		"server.js"
+	],
 	"rules": {
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",

@@ -1,27 +1,42 @@
 import cx from 'classnames'
 import Link from 'next/link'
-import type CP from '~types/componentProps'
+import useWindowSize from '~hooks/useWindowSize'
+import type CP from '~types/ComponentProps'
 import CRC from '~ui/CRC'
-import Persona from '~ui/Persona'
+import PersonalNav from '~ui/PersonalNav'
+import TopNav from '~ui/TopNav'
 import styles from './index.module.scss'
 
-export default function ActionBar({ children }: CP): JSX.Element {
+export interface ActionBarProps extends CP {
+	showNav: boolean
+}
+
+/**
+ * Top Level action bar
+ */
+export default function ActionBar({ children, showNav = true }: ActionBarProps): JSX.Element {
+	const { isLG } = useWindowSize()
+
 	return (
 		<div
 			className={cx(
-				'd-flex justify-content-between align-items-center py-4 bg-primary text-light',
+				'd-flex justify-content-between align-items-center py-3 bg-primary text-light',
 				styles.actionBar
 			)}
 		>
 			<CRC>
 				<div className='d-flex justify-content-between align-items-center'>
 					<Link href='/'>
-						<a className='text-light'>CBO Name</a>
+						<a className='text-light'>
+							<strong>CBO Name Here</strong>
+						</a>
 					</Link>
+
+					{isLG && showNav && <TopNav />}
 
 					{children}
 
-					<Persona />
+					<PersonalNav />
 				</div>
 			</CRC>
 		</div>

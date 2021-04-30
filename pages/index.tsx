@@ -1,17 +1,28 @@
-import { IStackTokens, Stack } from '@fluentui/react'
+import { GetStaticProps } from 'next'
 import Layout from '~layouts/ContainerLayout'
-import Counter from '~ui/Counter'
+import Dashboard from '~layouts/Dashboard'
+import PageProps from '~types/PageProps'
 
-const stackTokens: IStackTokens = { childrenGap: 40 }
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+	const ret = { props: { copy: {} } }
 
-export default function Home(): JSX.Element {
+	try {
+		// TODO: Move this logic into a util... it will need to be called on every page... or move it to _app.tsx?
+		const intlResponse: { default: any } = await import(`../intl/${locale}.json`)
+		ret.props.copy = intlResponse.default
+	} catch (error) {
+		console.log('error', error)
+	}
+
+	return ret
+}
+
+export default function Home({ copy }: PageProps): JSX.Element {
+	console.log('copy', copy)
+
 	return (
-		<Layout title="Dashboard">
-			<Stack tokens={stackTokens}>
-				<h3 className="mb-3">Directory Page</h3>
-				<span>Dynamic page rendering test:</span>
-				<Counter />
-			</Stack>
+		<Layout>
+			<Dashboard />
 		</Layout>
 	)
 }

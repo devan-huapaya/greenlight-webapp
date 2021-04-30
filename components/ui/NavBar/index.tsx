@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import type CP from '~types/componentProps'
+import type CP from '~types/ComponentProps'
 import CRC from '~ui/CRC'
 
 const links = [
@@ -24,6 +24,7 @@ const links = [
 		label: 'About'
 	}
 ]
+
 export default function NavBar({}: CP): JSX.Element {
 	return (
 		<div className={'d-flex justify-content-between align-items-center pt-5'}>
