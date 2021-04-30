@@ -102,8 +102,6 @@ yarn plop page page-name
 
 # Create a component
 # Creates a react component and style.module.scss in a folder with the component name
-# Inside of the the ./components/ui/ directory.
-# Currently this only creates a component in the ./components/ui/ directory
 yarn plop component ComponentName
 
 # Create a reducer
@@ -129,10 +127,10 @@ Use JSDocs comments to talk about your functions and components.
 
 ## TODO:
 
-- Clean up deployment environments (remove vercel, ensure gh-pages deploy)
+- Clean up deployment environments
 - Clean up bootstrap
-- Determine if azure docker deployment can support nextjs
-- And much more! 🙌✨🌈
+- Pull data from the api server
+- And much, much, more! 🙌✨🌈
 
 This project uses `TODO:` and `FIXME` comments to keep track outstanding in-term development work.
-I recommend using a VSCode extension like Todo Tree to help see them all
+I recommend using a VSCode extension like [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) to help see them all
