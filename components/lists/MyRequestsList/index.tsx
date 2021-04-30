@@ -6,17 +6,12 @@ import { IColumn } from '@fluentui/react'
 import { useSelector } from 'react-redux'
 import useWindowSize from '~hooks/useWindowSize'
 import { getMyRequests } from '~store/slices/myRequests'
-import RequestType from '~types/Request'
 import CardRow from '~ui/CardRow'
 import DetailsList, { DetailsListProps } from '~ui/DetailsList'
 import MultiActionButton from '~ui/MultiActionButton'
 import ShortString from '~ui/ShortString'
 
-export interface MyRequestsProps extends DetailsListProps {
-	requests: RequestType[]
-}
-
-export default function MyRequests(): JSX.Element {
+export default function MyRequests({ title = 'My Requests' }: DetailsListProps): JSX.Element {
 	const myRequests = useSelector(getMyRequests)
 	const { isXL, isXXL } = useWindowSize()
 	const myRequestsColumns: IColumn[] = [
@@ -34,7 +29,7 @@ export default function MyRequests(): JSX.Element {
 			isMultiline: true,
 			minWidth: 300,
 			onRender: function onRequestRender(item: Record<string, any>) {
-				return <ShortString text={item.request} limit={isXXL ? 80 : isXL ? 64 : 24} />
+				return <ShortString text={item.request} limit={isXXL ? 72 : isXL ? 64 : 24} />
 			}
 		},
 		{
@@ -70,7 +65,7 @@ export default function MyRequests(): JSX.Element {
 
 	return (
 		<DetailsList
-			title='My Requests'
+			title={title}
 			items={myRequests}
 			columns={myRequestsColumns}
 			onAdd={handleNewRequest}

@@ -69,6 +69,7 @@ export default function NavigatorsList({}: NavigatorsListrops): JSX.Element {
 	const handleNewRequest = () => {
 		console.log('new navigator')
 	}
+
 	console.log('navigator list', navigators)
 	return (
 		<DetailsList

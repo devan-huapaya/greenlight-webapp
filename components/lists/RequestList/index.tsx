@@ -31,7 +31,7 @@ export default function MyRequests({}: MyRequestsProps): JSX.Element {
 			isMultiline: true,
 			minWidth: 300,
 			onRender: function onRequestRender(item: Record<string, any>) {
-				return <ShortString text={item.request} limit={isXXL ? 80 : isXL ? 64 : 24} />
+				return <ShortString text={item.request} limit={isXXL ? 72 : isXL ? 64 : 24} />
 			}
 		},
 		{
@@ -75,7 +75,7 @@ export default function MyRequests({}: MyRequestsProps): JSX.Element {
 				<CardRow
 					item={props}
 					title='fullName'
-					// TODO: this should probably just be included as a link returned from the server
+					// TODO: this should probabl y just be included as a link returned from the server
 					/* eslint-disable */
 					titleLink={`/profile/${props?.item?.id ?? ''}`}
 					body='request'
